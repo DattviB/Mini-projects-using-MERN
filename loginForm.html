@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="login.css">
+    
+</link>
+    
+</head>
+<body>
+    <h1 class="text-center"> User Login Form </h1>   
+    <div id="wrapper" class="container">
+        <form id="loginform">
+            <div class="form-group">
+              <label for="emailId">Email address <span style="color:red;font-size: 18px;">*</span></label>
+              <input type="email" class="form-control" id="emailId" aria-describedby="emailHelp" maxlength="50" placeholder="abc@northeastern.edu" >
+              
+            </div>
+            <div class="form-group">
+                <label for="userName">User Name <span style="color:red;font-size: 18px;">*</span></label>
+                <input type="text" class="form-control" id="userName" placeholder="Enter User Name" maxlength="20" >
+              </div>
+            <div class="form-group">
+              <label for="pwd">Password <span style="color:red;font-size: 18px;">*</span></label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter Password" >
+             </div>
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn btn-primary" >Log in</button>
+          </div>
+          </form>
+        
+    </div>
+    <script src ="login.js"> </script>
+</body>
+</html>

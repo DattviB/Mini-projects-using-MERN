@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="styleSW.css" type="text/css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Stop Watch</title>
+</head>
+<body>
+    <h1>DIGITAL STOPWATCH</h1>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 block text-center">
+            <div class="timeStamp">
+                <p><span class="border border-primary border border-5" id="display">00:00:00</span></p> 
+            </div>
+            <br><br>
+             <div class="btn-group  btn-group-lg " role="group" aria-label="Calculator">
+                    <button type="button" class="btn btn-primary" id="play">Start</button>&nbsp;
+                    <button type="button" class="btn btn-primary" id="pause">Stop</button>&nbsp;
+                    <button type="button" class="btn btn-primary" id="reset">Reset</button>
+                
+            </div>
+            </div>
+            
+           
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+function timeToString(time) {
+  let diffInHrs = time / 3600000;
+  let hh = Math.floor(diffInHrs);
+
+  let diffInMin = (diffInHrs - hh) * 60;
+  let mm = Math.floor(diffInMin);
+
+  let diffInSec = (diffInMin - mm) * 60;
+  let ss = Math.floor(diffInSec);
+
+  let formattedHH = hh.toString().padStart(2, "0");
+  let formattedMM = mm.toString().padStart(2, "0");
+  let formattedSS = ss.toString().padStart(2, "0");
+
+  return `${formattedHH}:${formattedMM}:${formattedSS}`;
+
+
+}
+
+let playButton = document.getElementById("play");
+let pauseButton = document.getElementById("pause");
+let resetButton = document.getElementById("reset");
+
+playButton.addEventListener("click", start);
+pauseButton.addEventListener("click", pause);
+resetButton.addEventListener("click", reset);
+
+function start(){
+    startTime = Date.now();
+    timerInterval = setInterval(function printTime(){
+        elapsedTime = Date.now() - startTime;
+        setTime(timeToString(elapsedTime))
+       
+    }, 10)
+    playButton.disabled = true;
+}
+function setTime(strTime){
+    document.getElementById("display").innerHTML = strTime;
+}
+function pause() {
+  clearInterval(timerInterval);
+  playButton.disabled = false;
+}
+function reset(){
+    clearInterval(timerInterval);
+    setTime("00:00:00")
+    elapsedTime=0;
+}
+</script>

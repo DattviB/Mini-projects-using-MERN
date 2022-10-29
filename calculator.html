@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+</head>
+<link rel="stylesheet" href="calculator.css">
+
+</link>
+<body>
+    <form id="calcForm">
+    <h1> WELCOME <span id="userName"> </span> !</h1> 
+    <div class="col-md-12 text-right">
+        <button type="submit" class="btn btn-danger" onclick="logOut()">Log Out</button>
+    </div>  
+    <div id="wrapper" class="container">
+        
+            <div class="form-group">
+              <label for="number1">Number 1 <span style="color:red;font-size: 18px;">*</span></label>
+              <input type="text" class="form-control" id="number1" aria-describedby="emailHelp" placeholder="Enter number" required>
+              <span id="error_firstNum" style="color:red;font-size: 18px;"> </span>
+            </div>
+            <div class="form-group">
+                <label for="number2">Number 2 <span style="color:red;font-size: 18px;">*</span></label>
+                <input type="text" class="form-control" id="number2" placeholder="Enter number" required>
+                <span id="error_secNum" style="color:red;font-size: 18px;"> </span>
+              </div>
+            
+              <div class="btn-group  btn-group-lg " role="group" aria-label="Calculator">
+                <button type="button" class="btn btn-primary" id="add">Add</button>
+                <button type="button" class="btn btn-primary" id="subtract">Subtract</button>
+                <button type="button" class="btn btn-primary" id="multiply">Multiply</button>
+                <button type="button" class="btn btn-primary" id="divide">Divide</button>
+              </div>
+              <br><br><br>
+            <div class="form-group">
+                <label for="result">Result</label>
+                <input type="text" class="form-control" id="result" placeholder="" readonly> 
+              </div>
+          </form>
+        
+    </div>
+</body>
+</html>
+<script src="calculator.js"> 
+</script>
