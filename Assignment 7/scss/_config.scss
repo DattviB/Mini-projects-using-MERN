@@ -1,0 +1,25 @@
+//  variables
+$green:#6f0d0d;
+$black:#222;
+$white:#fff;
+$light-color:#666;
+$light-bg:#f3f3f3;
+$border:.1rem solid rgba(0,0,0,.1);
+$box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+@function set-text-color($color){
+    @if(lightness($color)>70){
+        @return #333;
+    }
+    @else{
+        @return #fff;
+    }
+}
+
+//use mixin to set the background and textcolor
+// @mixin set-background($color) {
+//     background-color: $color;
+//     color: set-text-color($color);
+    
+// }
+

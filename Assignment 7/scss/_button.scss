@@ -1,0 +1,22 @@
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    background: $green;
+    color:$white;
+    font-size: 1.7rem;
+    cursor: pointer;
+  
+    &:hover{
+      background:$black;
+    }
+  }
+  @function set-background($color){
+    @if(lightness($color)>70){
+        @return #333;
+    }
+    @else{
+        @return #fff;
+    }
+}  
+
